@@ -1,0 +1,23 @@
+{
+  "name": "folha-de-pagamento-wallissl",
+  "version": "1.0.0",
+  "description": "[M2S01] - Ex 1 - Projeto folha de pagamento",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FuturoDEV-Eco/folha-de-pagamento-wallissl.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FuturoDEV-Eco/folha-de-pagamento-wallissl/issues"
+  },
+  "homepage": "https://github.com/FuturoDEV-Eco/folha-de-pagamento-wallissl#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
