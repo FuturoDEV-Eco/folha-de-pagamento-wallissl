@@ -2,6 +2,7 @@
 function calcularInss(salarioBruto){
 
     let tetoInss = 908.85;
+    let valorDesconto;
 
     if(salarioBruto <= 1412){
         valorDesconto = (salarioBruto*0.075).toFixed(2)
@@ -18,6 +19,7 @@ function calcularInss(salarioBruto){
     if(valorDesconto > tetoInss){
         valorDesconto = tetoInss;
     }
+
     return valorDesconto
     
 }
