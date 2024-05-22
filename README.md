@@ -28,3 +28,8 @@ Considere o teto do INSS como R$ 908,85 e, o modelo de cálculo simples, conside
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/LYZgbpcg)
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=15085929&assignment_repo_type=AssignmentRepo)
 
+-----------------------
+
+[M2S01] - Ex 3 - Cálculo Imposto de renda retido na fonte
+
+Crie um arquivo chamado calculo_imposto_renda.js e implemente uma função que retorne o valor a ser pago de imposto de renda, com base no salário bruto recebido. Use as regras abaixo:
