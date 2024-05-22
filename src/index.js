@@ -14,5 +14,4 @@ input.question("Informe o valor do salário, para saber a alíquota a ser paga:"
     let valorDesconto = calcularInss(salarioBruto);
 
     console.log(`O valor do desconto é: R$${valorDesconto}`);
-  
 });

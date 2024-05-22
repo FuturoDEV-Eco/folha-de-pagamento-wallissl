@@ -12,7 +12,7 @@ function calcularInss(salarioBruto){
         
     }else if(salarioBruto <= 4000.03){
         valorDesconto = (salarioBruto*0.12).toFixed(2);
-    }else if(salarioBruto > 4000.04){
+    }else if(salarioBruto >= 4000.04){
         valorDesconto = (salarioBruto*0.14).toFixed(2);
     } 
 
@@ -21,7 +21,6 @@ function calcularInss(salarioBruto){
     }
 
     return valorDesconto
-    
 }
 
 module.exports = calcularInss
