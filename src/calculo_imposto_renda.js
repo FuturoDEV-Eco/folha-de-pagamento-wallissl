@@ -1,6 +1,5 @@
 
-function calcularInss(salarioBruto){
-
+function calcularIr(salarioBruto){
   
     let valorDesconto;
 
@@ -20,4 +19,4 @@ function calcularInss(salarioBruto){
 
 }
 
-module.exports = calcularInss
+module.exports = calcularIr
