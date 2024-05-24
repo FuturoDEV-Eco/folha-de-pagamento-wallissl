@@ -14,7 +14,8 @@ function salarioLiquido(salarioBruto){
     }else{
         let totalDesconto = (descontoInss - descontoVt)
         return totalDesconto
-    }    
+    }
+    
 
 }
 
