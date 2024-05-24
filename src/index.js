@@ -18,7 +18,7 @@ const input = readline.createInterface({
     console.log(`O valor do desconto é: R$${valorDesconto}`);
 }); */
 
-//EX3
+// EX3
 /* input.question("Informe o valor do salário Bruto para saber a alíquota referente ao Imposto de renda:", (salarioDigitado) => {
     let salarioBruto = salarioDigitado
     let valorDesconto = calcularIr(salarioBruto);
@@ -31,10 +31,40 @@ const input = readline.createInterface({
 })
  */
 
-//EX4
-input.question("Informe o valor do salário Bruto para saber o saldo do seu salário liquido:", (salarioDigitado) => {
+// EX4
+/*  input.question("Informe o valor do salário Bruto para saber o saldo do seu salário liquido:", (salarioDigitado) => {
     let salarioBruto = salarioDigitado;
     let saldoLiquido = salarioLiquido(salarioBruto);
 
     console.log(`O valor do seu salário liquido é: R$${saldoLiquido.toFixed(2)}`)
-})
+})  */
+
+// Ex5
+
+let nome ="";
+let cpf="";
+let mesPagamento;
+let salarioBruto;
+let descontoVt = 0;
+
+input.question("Informe o seu nome: " , (nomeDigitado) => {
+    nome = nomeDigitado;
+
+    input.question("inform o seu cpf: ", (cpfDigitado) => {
+        cpf = cpfDigitado;
+
+    input.question("Informe o mês do pagamento: " , (mesDigitado) => {
+        mesPagamento = (mesDigitado);
+
+    input.question("Informe o valor do salário bruto: " , (salarioDigitado) => {
+            salarioBruto = (salarioDigitado);
+    
+    descontoVt = salarioBruto * 0.06
+
+    console.log(`--- Folha de pagamento mês - ${mesPagamento} --- \nNome: ${nome} \nCPF: ${cpf} \nSalário Bruto: R$${salarioBruto}\nINSS: R$${calcularInss(salarioBruto)}\nImposto de Renda: R$${calcularIr((salarioBruto - calcularInss(salarioBruto)))}\nVale Transporte: R$${descontoVt}\nSalário Líquido: R$${salarioLiquido(salarioBruto)}\n`);
+
+
+            });
+        });
+    });
+}); 
