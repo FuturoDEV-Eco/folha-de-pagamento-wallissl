@@ -3,6 +3,9 @@ const calcularIr = require("./calculo_imposto_renda");
 const salarioLiquido = require("./calculo_salario_liquido");
 const readline = require('readline');
 
+const fs = require('fs');
+const PDFDocument = require('pdfkit');
+
 const input = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
@@ -63,8 +66,40 @@ input.question("Informe o seu nome: " , (nomeDigitado) => {
 
     console.log(`--- Folha de pagamento mês - ${mesPagamento} --- \nNome: ${nome} \nCPF: ${cpf} \nSalário Bruto: R$${salarioBruto}\nINSS: R$${calcularInss(salarioBruto)}\nImposto de Renda: R$${calcularIr((salarioBruto - calcularInss(salarioBruto)))}\nVale Transporte: R$${descontoVt}\nSalário Líquido: R$${salarioLiquido(salarioBruto)}\n`);
 
+                input.question("Deseja gerar um PDF da folha de pagamento?\n1 - Sim\n2 - Não\n", (resposta) => {
+                
+                    switch(Number(resposta)){
+                    
+                        case 1:
+                            const doc = new PDFDocument();
+                            doc.pipe(fs.createWriteStream('./folhas_pagamento/folha_pagamento.pdf'));
+                            doc.fontSize(12);
 
+                            doc.text('--- Folha de Pagamento ---');
+                            doc.text(`Data de Geração: ${new Date().toLocaleDateString()}`);
+                            doc.text(`Nome: ${nome}`);
+                            doc.text(`CPF: ${cpf}`);
+                            doc.text(`--- ---`);
+                            doc.text(`Salário Bruto: R$${salarioBruto}`);
+                            doc.text(`--- ---`);
+                            doc.text(`INSS: R$${calcularInss(salarioBruto)}`);
+                            doc.text(`Imposto de Renda: R$${calcularIr(salarioBruto - calcularInss(salarioBruto))}`);
+                            doc.text(`VT: R$${descontoVt}`);
+                            doc.text(`--- ---`);
+                            doc.text(`Salário Líquido: R$${salarioLiquido(salarioBruto)}`);
+                            doc.end();
+
+                            console.log('Folha de pagamento salva em folha_pagamento.pdf');
+                            input.close();
+                            break;
+                        case 2:
+                            input.close();
+                            break;
+                        default: 
+                            input.close() 
+                    }
+                })
             });
         });
     });
-}); 
+});
